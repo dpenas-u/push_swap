@@ -1,7 +1,7 @@
 #include "libft.h"
 #include "ft_push_swap.h"
 
-int	ft_check_order(t_list **lst)
+int	ft_check_order_desc(t_list **lst)
 {
 	int	i1;
 	int	i2;
@@ -14,7 +14,7 @@ int	ft_check_order(t_list **lst)
 		i1 = ft_atoi(aux->content);
 		lst1 = aux->next;
 		i2 = ft_atoi(lst1->content);
-		if (i1 > i2)
+		if (i1 < i2)
 			return (0);
 		aux = aux->next;
 	}

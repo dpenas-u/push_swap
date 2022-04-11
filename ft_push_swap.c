@@ -14,7 +14,7 @@ int	main(int argc, char *argv[])
 	while (argv[++i])
 		ft_lstadd_back(&lst, ft_lstnew(argv[i]));
 	//ft_swap(&lst);
-	if (ft_check_order(&lst))
+	if (ft_check_order_ascen(&lst))
 		printf("Si ");
 	else
 		printf("No ");
