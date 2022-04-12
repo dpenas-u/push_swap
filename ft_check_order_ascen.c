@@ -1,10 +1,22 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_check_order_ascen.c                             :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: dpenas-u <dpenas-u@student.42madrid>       +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/04/12 09:32:07 by dpenas-u          #+#    #+#             */
+/*   Updated: 2022/04/12 09:32:26 by dpenas-u         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "libft.h"
 #include "ft_push_swap.h"
 
 int	ft_check_order_ascen(t_list **lst)
 {
-	int	i1;
-	int	i2;
+	int		i1;
+	int		i2;
 	t_list	*lst1;
 	t_list	*aux;
 
