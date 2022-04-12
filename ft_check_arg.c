@@ -6,7 +6,7 @@
 /*   By: dpenas-u <dpenas-u@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/12 08:21:03 by dpenas-u          #+#    #+#             */
-/*   Updated: 2022/04/12 08:52:28 by dpenas-u         ###   ########.fr       */
+/*   Updated: 2022/04/12 09:00:37 by dpenas-u         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,16 @@ int	ft_check_arg(char *argv[])
 		else if (!ft_atoi(argv[i]) && ft_strlen(argv[i]))
 			return (0);
 	}
+	if (!ft_check_dup(argv))
+		return (0);
+	return (1);
+}
+
+int	ft_check_dup(char *argv[])
+{
+	int	i;
+	int	j;
+
 	i = 0;
 	while (argv[++i])
 	{
