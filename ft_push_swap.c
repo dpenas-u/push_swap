@@ -8,7 +8,7 @@ int	main(int argc, char *argv[])
 	t_list	*lst;
 
 	if (argc < 2)
-		return (0);
+		exit(0);
 	if (!ft_check_arg(argv))
 	{
 		ft_putendl_fd("Error", 2);
@@ -25,5 +25,5 @@ int	main(int argc, char *argv[])
 		free(lst);
 		lst = lst->next;
 	}
-	system("leaks a.out");
+	system("leaks push_swap");
 }

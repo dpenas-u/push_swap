@@ -6,7 +6,7 @@
 /*   By: dpenas-u <dpenas-u@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/12 08:21:03 by dpenas-u          #+#    #+#             */
-/*   Updated: 2022/04/12 09:01:25 by dpenas-u         ###   ########.fr       */
+/*   Updated: 2022/04/12 09:07:00 by dpenas-u         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,6 @@
 int	ft_check_arg(char *argv[])
 {
 	int	i;
-	int	j;
 
 	i = 0;
 	while (argv[++i])
