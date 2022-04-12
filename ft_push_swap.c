@@ -6,7 +6,7 @@
 /*   By: dpenas-u <dpenas-u@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/12 09:34:09 by dpenas-u          #+#    #+#             */
-/*   Updated: 2022/04/12 14:07:05 by dpenas-u         ###   ########.fr       */
+/*   Updated: 2022/04/12 14:29:55 by dpenas-u         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,27 +68,37 @@ void	ft_sort_small5(t_list **stack_a, t_list **stack_b)
 			else
 				arr.b2 = 0;
 		}
-		if (arr.a1 > arr.a2)
-		{
-			if (arr.a1 > arr.a3)
-				ft_rotate(stack_a);
-			else if (arr.a1 < arr.a3)
-				ft_swap(stack_a);
-		}
+		if (!ft_check_order_ascen(*stack_a) && !ft_check_order_desc(*stack_b))
+			ft_push(stack_a, stack_b);
 		else
 		{
-			if (arr.a1 < arr.a3)
+			if (arr.a1 > arr.a2)
 			{
-				if (*stack_b && arr.b1 < arr.a1)
-					ft_push(stack_a, stack_b);
-				else if (*stack_b && arr.b1 > arr.a1)
-					ft_push(stack_a, stack_b);
-				else
-					ft_push(stack_b, stack_a);
+				if (arr.a1 > arr.a3)
+					ft_rotate(stack_a);
+				else if (arr.a1 < arr.a3)
+					ft_swap(stack_a);
 			}
-		}	ft_printf_list(stack_a);
-		i	ft_putstr_fd("\n", 1);  ++;
-		i	ft_printf_list(stack_b);f (i == 5)
+			else
+			{
+				if (arr.a1 < arr.a3)
+				{
+					if (*stack_b && arr.b1 < arr.a1)
+						ft_push(stack_b, stack_a);
+					else if (*stack_b && arr.b1 > arr.a1)
+						ft_push(stack_a, stack_b);
+					else
+						ft_push(stack_b, stack_a);
+				}
+				else
+					ft_rrotate(stack_a);
+			}
+		}
+		ft_printf_list(*stack_a);
+		ft_putstr_fd("\n", 1);
+		ft_printf_list(*stack_b);
+		i++;
+		if (i == 12)
 			break ;
 	}
 }
