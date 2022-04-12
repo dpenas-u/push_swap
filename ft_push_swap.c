@@ -6,7 +6,7 @@
 /*   By: dpenas-u <dpenas-u@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/12 09:34:09 by dpenas-u          #+#    #+#             */
-/*   Updated: 2022/04/12 09:34:10 by dpenas-u         ###   ########.fr       */
+/*   Updated: 2022/04/12 09:43:00 by dpenas-u         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,9 +16,8 @@
 
 int	main(int argc, char *argv[])
 {
-	int		i;
-	t_list	*lst1;
-	t_list	*lst2;
+	t_list	*lsta;
+	t_list	*lstb;
 
 	if (argc < 2)
 		exit(0);
@@ -27,17 +26,30 @@ int	main(int argc, char *argv[])
 		ft_putendl_fd("Error", 2);
 		exit(1);
 	}
-	ft_create_list(argv, lst);
+	lsta = 0;
+	lstb = 0;
+	ft_create_list(argv, &lsta);
+	ft_printf_list(lsta);
+	ft_putstr_fd("\n", 1);
+	ft_printf_list(lstb);
+	system("leaks push_swap");
+}
+
+void	ft_create_list(char *argv[], t_list **lst)
+{
+	int	i;
+
 	i = 0;
-	lst = 0;
 	while (argv[++i])
-		ft_lstadd_back(&lst, ft_lstnew(argv[i]));
-	ft_rrotate(&lst);
+		ft_lstadd_back(lst, ft_lstnew(argv[i]));
+}
+
+void	ft_printf_list(t_list *lst)
+{
 	while (lst)
 	{
-		printf("%s\n", lst->content);
+		ft_putendl_fd(lst->content, 1);
 		free(lst);
 		lst = lst->next;
 	}
-	system("leaks push_swap");
 }
