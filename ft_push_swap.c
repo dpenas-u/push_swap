@@ -6,7 +6,7 @@
 /*   By: dpenas-u <dpenas-u@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/12 09:34:09 by dpenas-u          #+#    #+#             */
-/*   Updated: 2022/04/12 14:29:55 by dpenas-u         ###   ########.fr       */
+/*   Updated: 2022/04/12 14:39:53 by dpenas-u         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,24 +36,25 @@ int	main(int argc, char **argv)
 	ft_create_list(l_argv, &stack_a);
 	if (!ft_check_order_ascen(stack_a))
 		exit(0);
+	/*
 	if (ft_lstsize(stack_a) < 4)
 		ft_sort_small3(&stack_a);
-	else if (ft_lstsize(stack_a) < 6)
+	*/
+	if (ft_lstsize(stack_a) < 500)
 		ft_sort_small5(&stack_a, &stack_b);
 	//else
 	//	ft_sort_big(&stack_a, &stack_b)
+	/*
 	ft_printf_list(stack_a);
 	ft_putstr_fd("\n", 1);
 	ft_printf_list(stack_b);
 	system("leaks push_swap");
+	*/
 }
 
 void	ft_sort_small5(t_list **stack_a, t_list **stack_b)
 {
 	t_l arr;
-	int	i;
-
-	i = 0;
 
 	while ((ft_check_order_ascen(*stack_a) || ft_check_order_desc(*stack_b)) || ft_lstsize(*stack_b))
 	{
@@ -94,12 +95,11 @@ void	ft_sort_small5(t_list **stack_a, t_list **stack_b)
 					ft_rrotate(stack_a);
 			}
 		}
+		/*	
 		ft_printf_list(*stack_a);
 		ft_putstr_fd("\n", 1);
 		ft_printf_list(*stack_b);
-		i++;
-		if (i == 12)
-			break ;
+		*/
 	}
 }
 
