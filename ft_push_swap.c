@@ -6,7 +6,7 @@
 /*   By: dpenas-u <dpenas-u@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/12 09:34:09 by dpenas-u          #+#    #+#             */
-/*   Updated: 2022/04/12 14:39:53 by dpenas-u         ###   ########.fr       */
+/*   Updated: 2022/04/12 14:43:48 by dpenas-u         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,12 +44,10 @@ int	main(int argc, char **argv)
 		ft_sort_small5(&stack_a, &stack_b);
 	//else
 	//	ft_sort_big(&stack_a, &stack_b)
-	/*
 	ft_printf_list(stack_a);
 	ft_putstr_fd("\n", 1);
 	ft_printf_list(stack_b);
 	system("leaks push_swap");
-	*/
 }
 
 void	ft_sort_small5(t_list **stack_a, t_list **stack_b)
