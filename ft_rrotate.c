@@ -6,7 +6,7 @@
 /*   By: dpenas-u <dpenas-u@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/12 09:33:38 by dpenas-u          #+#    #+#             */
-/*   Updated: 2022/04/12 09:33:40 by dpenas-u         ###   ########.fr       */
+/*   Updated: 2022/04/12 13:39:42 by dpenas-u         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,7 @@ void	ft_rrotate(t_list **lst)
 		*lst = (*lst)->next;
 	(*lst)->next = 0;
 	*lst = aux;
+	ft_putendl_fd("rra", 1);
 }
 
 void	ft_rrotrrot(t_list **lst1, t_list **lst2)

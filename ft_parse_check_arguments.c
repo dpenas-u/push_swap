@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_check_arg.c                                     :+:      :+:    :+:   */
+/*   ft_parse_check_arguments.c                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dpenas-u <dpenas-u@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/04/12 08:21:03 by dpenas-u          #+#    #+#             */
-/*   Updated: 2022/04/12 09:07:00 by dpenas-u         ###   ########.fr       */
+/*   Created: 2022/04/12 11:55:29 by dpenas-u          #+#    #+#             */
+/*   Updated: 2022/04/12 12:15:40 by dpenas-u         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ int	ft_check_arg(char *argv[])
 		if (!ft_strncmp(argv[i], "0", ft_strlen(argv[i]))
 			|| !ft_strncmp(argv[i], "-0", ft_strlen(argv[i])))
 			continue ;
-		else if (ft_strlen(argv[i]) >= 10
+		else if (ft_strlen(argv[i]) > 9
 			&& (!ft_atoi(argv[i]) || ft_atoi(argv[i]) == -1))
 			return (0);
 		else if (!ft_atoi(argv[i]) && ft_strlen(argv[i]))

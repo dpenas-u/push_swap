@@ -6,12 +6,12 @@
 #    By: dpenas-u <dpenas-u@student.42madrid>       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/03/21 10:49:59 by dpenas-u          #+#    #+#              #
-#    Updated: 2022/04/12 09:40:19 by dpenas-u         ###   ########.fr        #
+#    Updated: 2022/04/12 12:19:53 by dpenas-u         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 SRC = ft_push_swap.c ft_swap.c ft_push.c ft_rotate.c ft_rrotate.c \
-	  ft_check_order_ascen.c ft_check_order_desc.c ft_check_arg.c
+	  ft_check_order_ascen.c ft_check_order_desc.c ft_parse_check_arguments.c 
 
 OBJ_SRC = $(SRC:.c=.o)
 

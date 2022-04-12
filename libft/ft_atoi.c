@@ -6,29 +6,29 @@
 /*   By: dpenas-u <dpenas-u@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/23 10:00:06 by dpenas-u          #+#    #+#             */
-/*   Updated: 2022/03/23 10:00:08 by dpenas-u         ###   ########.fr       */
+/*   Updated: 2022/04/12 10:16:04 by dpenas-u         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 int	ft_atoi(const char *nptr)
 {
-	unsigned int	i;
 	unsigned int	is_neg;
 	unsigned int	n;
 
-	i = 0;
-	while (nptr[i] && ((nptr[i] > 8 && nptr[i] < 14) || nptr[i] == 32))
-		i++;
+	while (*nptr && ((*nptr > 8 && *nptr < 14) || *nptr == 32))
+		nptr++;
 	n = 0;
 	is_neg = 0;
-	if (nptr[i] == 43 || nptr[i] == 45)
+	if (*nptr == 43 || *nptr == 45)
 	{
-		if (nptr[i++] == 45)
+		if (*nptr++ == 45)
 			is_neg = 1;
 	}
-	while (nptr[i] && nptr[i] > 47 && nptr[i] < 58)
+	while (*nptr)
 	{
-		n = n * 10 + nptr[i++] - 48;
+		if (!(*nptr > 47 && *nptr < 58))
+			return (0);
+		n = n * 10 + *nptr++ - 48;
 		if (n > 2147483648 && is_neg)
 			return (0);
 		else if (n > 2147483647 && !is_neg)

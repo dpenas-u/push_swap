@@ -6,7 +6,7 @@
 /*   By: dpenas-u <dpenas-u@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/11 11:27:28 by dpenas-u          #+#    #+#             */
-/*   Updated: 2022/04/11 14:51:44 by dpenas-u         ###   ########.fr       */
+/*   Updated: 2022/04/12 13:40:11 by dpenas-u         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,7 @@ void	ft_swap(t_list **lst)
 	*lst = (*lst)->next;
 	(*lst)->next = lst_aux;
 	(*lst)->next->next = lst_aux1;
+	ft_putendl_fd("sa", 1);
 }
 
 void	ft_swapswap(t_list **lst1, t_list **lst2)
