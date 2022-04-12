@@ -9,18 +9,19 @@ int	main(int argc, char *argv[])
 
 	if (argc < 2)
 		return (0);
+	if (!ft_check_arg(argv))
+	{
+		ft_putendl_fd("Error", 2);
+		exit(1);
+	}
 	i = 0;
 	lst = 0;
 	while (argv[++i])
 		ft_lstadd_back(&lst, ft_lstnew(argv[i]));
-	//ft_swap(&lst);
-	if (ft_check_order_ascen(&lst))
-		printf("Si ");
-	else
-		printf("No ");
+	ft_rrotate(&lst);
 	while (lst)
 	{
-		printf("%s ", lst->content);
+		printf("%s\n", lst->content);
 		free(lst);
 		lst = lst->next;
 	}

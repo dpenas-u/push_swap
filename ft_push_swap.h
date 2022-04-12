@@ -10,5 +10,6 @@ void	ft_rrotate(t_list **lst);
 void	ft_rrotrrot(t_list **lst1, t_list **lst2);
 int		ft_check_order_ascen(t_list **lst);
 int		ft_check_order_desc(t_list **lst);
+int		ft_check_arg(char *argv[]);
 
 #endif
