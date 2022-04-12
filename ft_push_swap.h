@@ -38,5 +38,6 @@ void	ft_create_list(char **l_argv, t_list **lst);
 void	ft_printf_list(t_list *lst);
 void	ft_sort_small3(t_list **stack_a);
 void	ft_sort_small5(t_list **stack_a, t_list **stack_b);
+void	ft_sort_big(t_list **stack_a, t_list **stack_b);
 
 #endif
