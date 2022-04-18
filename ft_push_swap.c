@@ -36,158 +36,16 @@ int	main(int argc, char **argv)
 	ft_create_list(l_argv, &stack_a);
 	if (!ft_check_order_ascen(stack_a))
 		exit(0);
-	/*
-	if (ft_lstsize(stack_a) < 4)
-		ft_sort_small3(&stack_a);
-	*/
 	if (ft_lstsize(stack_a) < 6)
-		ft_sort_small5(&stack_a, &stack_b);
-	else
-		ft_sort_big(&stack_a, &stack_b);
+		ft_sort_small(&stack_a, &stack_b);
+	//else
+	//	ft_sort_big(&stack_a, &stack_b);
 	/*
 	ft_printf_list(stack_a);
 	ft_putstr_fd("\n", 1);
 	ft_printf_list(stack_b);
 	system("leaks push_swap");
 	*/
-}
-
-void	ft_sort_big(t_list **stack_a, t_list **stack_b)
-{
-	t_l	arr;
-
-	while ((ft_check_order_ascen(*stack_a) || ft_check_order_desc(*stack_b)) || ft_lstsize(*stack_b))
-	{
-		arr.a1 = ft_atoi((*stack_a)->content);
-		arr.a2 = ft_atoi((*stack_a)->next->content);
-		arr.a3 = ft_atoi((ft_lstlast(*stack_a))->content);
-		if (ft_lstsize(*stack_b))
-		{
-			arr.b1 = ft_atoi((*stack_b)->content);
-			if (ft_lstsize(*stack_b) > 1)
-			{
-				arr.b2 = ft_atoi((*stack_b)->next->content);
-				arr.b3 = ft_atoi((ft_lstlast(*stack_b))->content);
-			}
-			else
-			{
-				arr.b2 = 0;
-				arr.b3 = 0;
-			}
-		}
-		if (!ft_check_order_ascen(*stack_a) && !ft_check_order_desc(*stack_b))
-			ft_push(stack_a, stack_b);
-		else
-		{
-			if (arr.a1 > arr.a2)
-			{
-				if (arr.a1 > arr.a3)
-					ft_rotate(stack_a);
-				else if (arr.a1 < arr.a3)
-					ft_swap(stack_a);
-			}
-			else
-			{
-				if (arr.a1 < arr.a3)
-				{
-					if (*stack_b && arr.b1 < arr.a1)
-						ft_push(stack_b, stack_a);
-					else if (*stack_b && arr.b1 > arr.a1)
-						ft_push(stack_a, stack_b);
-					else
-						ft_push(stack_b, stack_a);
-				}
-				else
-					ft_rrotate(stack_a);
-			}
-			if (*stack_b && arr.b1 < arr.b2)
-			{
-				if ((*stack_b)->next && arr.b1 < arr.b3)
-					ft_rotate(stack_b);
-				else if ((*stack_b)->next && arr.a1 > arr.a3)
-					ft_swap(stack_b);
-			}
-			/*
-			else if (*stack_b && (*stack_b)->next)
-			{
-				if (arr.b1 > arr.b3)
-					ft_rrotate(stack_b);
-			}
-			*/
-		}
-	}
-}
-
-void	ft_sort_small5(t_list **stack_a, t_list **stack_b)
-{
-	t_l arr;
-
-	while ((ft_check_order_ascen(*stack_a) || ft_check_order_desc(*stack_b)) || ft_lstsize(*stack_b))
-	{
-		arr.a1 = ft_atoi((*stack_a)->content);
-		arr.a2 = ft_atoi((*stack_a)->next->content);
-		arr.a3 = ft_atoi((ft_lstlast(*stack_a))->content);
-		if (ft_lstsize(*stack_b))
-		{
-			arr.b1 = ft_atoi((*stack_b)->content);
-			if (ft_lstsize(*stack_b) > 1)
-				arr.b2 = ft_atoi((*stack_b)->next->content);
-			else
-				arr.b2 = 0;
-		}
-		if (!ft_check_order_ascen(*stack_a) && !ft_check_order_desc(*stack_b))
-			ft_push(stack_a, stack_b);
-		else
-		{
-			if (arr.a1 > arr.a2)
-			{
-				if (arr.a1 > arr.a3)
-					ft_rotate(stack_a);
-				else if (arr.a1 < arr.a3)
-					ft_swap(stack_a);
-			}
-			else
-			{
-				if (arr.a1 < arr.a3)
-				{
-					if (*stack_b && arr.b1 < arr.a1)
-						ft_push(stack_b, stack_a);
-					else if (*stack_b && arr.b1 > arr.a1)
-						ft_push(stack_a, stack_b);
-					else
-						ft_push(stack_b, stack_a);
-				}
-				else
-					ft_rrotate(stack_a);
-			}
-		}
-		/*	
-		ft_printf_list(*stack_a);
-		ft_putstr_fd("\n", 1);
-		ft_printf_list(*stack_b);
-		*/
-	}
-}
-
-void	ft_sort_small3(t_list **stack_a)
-{
-	t_l	arr;
-
-	while (ft_check_order_ascen(*stack_a))
-	{
-		arr.a1 = ft_atoi((*stack_a)->content);
-		arr.a2 = ft_atoi((*stack_a)->next->content);
-		arr.a3 = ft_atoi((ft_lstlast(*stack_a))->content);
-		if (arr.a1 > arr.a2)
-		{ 
-			if (arr.a1 > arr.a3)
-				ft_rotate(stack_a);
-			else if (arr.a1 < arr.a3)
-				ft_swap(stack_a);
-		}
-		else
-			ft_rrotate(stack_a);
-	}
 }
 
 void	ft_create_list(char **l_argv, t_list **lst)

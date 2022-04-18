@@ -13,7 +13,7 @@
 #include "libft.h"
 #include "ft_push_swap.h"
 
-void	ft_swap(t_list **lst)
+void	ft_swapa(t_list **lst)
 {
 	t_list	*lst_aux;
 	t_list	*lst_aux1;
@@ -28,8 +28,24 @@ void	ft_swap(t_list **lst)
 	ft_putendl_fd("sa", 1);
 }
 
+void	ft_swapb(t_list **lst)
+{
+	t_list	*lst_aux;
+	t_list	*lst_aux1;
+
+	if (!(*lst) || !((*lst)->next))
+		return ;
+	lst_aux = *lst;
+	lst_aux1 = (*lst)->next->next;
+	*lst = (*lst)->next;
+	(*lst)->next = lst_aux;
+	(*lst)->next->next = lst_aux1;
+	ft_putendl_fd("sb", 1);
+}
+
 void	ft_swapswap(t_list **lst1, t_list **lst2)
 {
-	ft_swap(lst1);
-	ft_swap(lst2);
+	ft_swapa(lst1);
+	ft_swapb(lst2);
+	ft_putendl_fd("ss", 1);
 }

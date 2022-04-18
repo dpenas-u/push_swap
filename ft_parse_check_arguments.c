@@ -17,7 +17,7 @@ int	ft_check_arg(char *argv[])
 {
 	int	i;
 
-	i = 0;
+	i = -1;
 	while (argv[++i])
 	{
 		if (!ft_strncmp(argv[i], "0", ft_strlen(argv[i]))
@@ -39,7 +39,7 @@ int	ft_check_dup(char *argv[])
 	int	i;
 	int	j;
 
-	i = 0;
+	i = -1;
 	while (argv[++i])
 	{
 		j = i;

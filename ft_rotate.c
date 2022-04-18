@@ -13,7 +13,7 @@
 #include "libft.h"
 #include "ft_push_swap.h"
 
-void	ft_rotate(t_list **lst)
+void	ft_rotatea(t_list **lst)
 {
 	t_list	*aux;
 
@@ -24,8 +24,20 @@ void	ft_rotate(t_list **lst)
 	ft_putendl_fd("ra", 1);
 }
 
+void	ft_rotateb(t_list **lst)
+{
+	t_list	*aux;
+
+	aux = *lst;
+	*lst = (*lst)->next;
+	aux->next = 0;
+	ft_lstadd_back(lst, aux);
+	ft_putendl_fd("rb", 1);
+}
+
 void	ft_rotrot(t_list **lst1, t_list **lst2)
 {
-	ft_rotate(lst1);
-	ft_rotate(lst2);
+	ft_rotatea(lst1);
+	ft_rotateb(lst2);
+	ft_putendl_fd("rr", 1);
 }

@@ -11,7 +11,7 @@
 # **************************************************************************** #
 
 SRC = ft_push_swap.c ft_swap.c ft_push.c ft_rotate.c ft_rrotate.c \
-	  ft_check_order_ascen.c ft_check_order_desc.c ft_parse_check_arguments.c 
+	  ft_check_order_ascen.c ft_check_order_desc.c ft_parse_check_arguments.c ft_sort_small.c 
 
 OBJ_SRC = $(SRC:.c=.o)
 

@@ -13,7 +13,19 @@
 #include "libft.h"
 #include "ft_push_swap.h"
 
-void	ft_push(t_list **lst1, t_list **lst2)
+void	ft_pushb(t_list **lst1, t_list **lst2)
+{
+	t_list	*aux;
+
+	if (!(*lst1))
+		return ;
+	aux = *lst1;
+	*lst1 = (*lst1)->next;
+	ft_lstadd_front(lst2, aux);
+	ft_putendl_fd("pb", 1);
+}
+
+void	ft_pusha(t_list **lst1, t_list **lst2)
 {
 	t_list	*aux;
 
